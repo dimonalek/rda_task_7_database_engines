@@ -10,8 +10,8 @@ CREATE TABLE Countries (
 
 CREATE TABLE GeoIPCache (
     ID INT AUTO_INCREMENT,
-    IPRange VARCHAR(50),
-    CountryID INT,
+    IPRange VARCHAR(50) not null,
+    CountryID INT not null,
     PRIMARY KEY (ID)
 ) ENGINE=MEMORY;
 
@@ -24,10 +24,8 @@ CREATE TABLE ProductDescription (
 ) ENGINE=InnoDB;
 
 CREATE TABLE Logs (
-    ID INT AUTO_INCREMENT,
     `Timestamp` TIMESTAMP,
-    Message TEXT,
-    PRIMARY KEY (ID)
+    Message TEXT
 ) ENGINE=BLACKHOLE;
 
 CREATE TABLE ProductReporting (
